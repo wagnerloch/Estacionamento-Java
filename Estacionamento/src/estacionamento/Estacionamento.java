@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
@@ -119,7 +120,7 @@ public class Estacionamento {
                 }
             }
         }
-        System.out.println ("Veiculo "+ catalogoDeCarros.pegaModelo(chassi) + "não pode ser alocado na vaga "+ vaga);
+        System.out.println ("Veiculo "+ catalogoDeCarros.pegaModelo(chassi) + " não pode ser alocado na vaga "+ vaga);
         catalogoDeVagas.alocarFalha(vaga);
         gerarLog (8, 0, chassi, vaga);
     }
@@ -278,35 +279,56 @@ public class Estacionamento {
             gravarArquivo.println();
             //IMPRIME POR ORDEM DECRESCENTE DE PESO, ALTURA, COMPRIMENTO E LARGURA
             gravarArquivo.println("Carros estacionados hoje: ");
-            TreeMultimap<Float, Integer> mapList;
-            mapList = Estatistica.getMapList();
-            for (Float key : mapList.keySet()) {
-                List<Integer> list = (List<Integer>) mapList.get(key);
-                while (list.size() > 0){
-                int imprimirChassi = list.get(0);
-                    for(int aux = 0; aux < list.size(); aux++){
-                        if (catalogoDeCarros.pegaAltura(imprimirChassi) < catalogoDeCarros.pegaAltura(list.get(aux))){
-                            imprimirChassi = list.get(aux);
-                        }else{
-                            if (catalogoDeCarros.pegaAltura(imprimirChassi) == catalogoDeCarros.pegaAltura(list.get(aux))){
-                                //MUDA FATOR
-                                if (catalogoDeCarros.pegaComprimento(imprimirChassi) < catalogoDeCarros.pegaComprimento(list.get(aux))){
-                                    imprimirChassi = list.get(aux);
-                                }else{
-                                    if (catalogoDeCarros.pegaComprimento(imprimirChassi) == catalogoDeCarros.pegaComprimento(list.get(aux))){
-                                        //MUDA FATOR
-                                        if (catalogoDeCarros.pegaLargura(imprimirChassi) < catalogoDeCarros.pegaLargura(list.get(aux))){
-                                            imprimirChassi = list.get(aux);
+            //MATRIZ COM TODOS OS CARROS ESTACIONADOS
+            ArrayList<ArrayList<Object>> matriz;
+            matriz = Estatistica.getMatriz();
+            //NAVEGA PELAS COLUNAS
+            for (int i = 0; i < matriz.size(); i++) {
+                int contador = matriz.get(i).size();
+                int removedor;
+                //NAVEGA PELAS LINHAS
+                for (int j = 0; j < contador; j++) {
+                    CarroMatriz maior = (CarroMatriz) matriz.get(i).get(0);
+                    removedor = 0;
+                    //LINHA TEM MAIS DE UM ELEMENTO
+                    if (matriz.get(i).size() > 1) {
+                        //ACHA O MAIOR NA LINHA
+                        for (int k = 1; k < matriz.get(i).size(); k++) {
+                            CarroMatriz aux = (CarroMatriz) matriz.get(i).get(k);
+                            if (aux.peso > maior.peso) {
+                                maior = aux;
+                                removedor = k;
+                            } else {
+                                if (aux.peso == maior.peso) {
+                                    if (aux.altura > maior.altura) {
+                                        maior = aux;
+                                        removedor = k;
+                                    } else {
+                                        if (aux.altura == maior.altura) {
+                                            if (aux.comprimento > maior.comprimento) {
+                                                maior = aux;
+                                                removedor = k;
+                                            } else {
+                                                if (aux.comprimento == maior.comprimento) {
+                                                    if (aux.largura > maior.largura) {
+                                                        maior = aux;
+                                                        removedor = k;
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
                                 }
                             }
                         }
-                        gravarArquivo.println(imprimirChassi);
-                        list.remove((Integer) imprimirChassi);
                     }
+                    gravarArquivo.print (maior.chassi);
+                    gravarArquivo.print (" | ");
+                    gravarArquivo.println (maior.modelo);
+                    matriz.get(i).remove(removedor);
                 }
             }
+            
             //FECHA O ARQUIVO RELATORIO.TXT
             arquivo.close();
             System.out.println();   

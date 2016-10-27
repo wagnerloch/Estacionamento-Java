@@ -6,17 +6,17 @@
 package estacionamento;
 
 import static estacionamento.Estacionamento.catalogoDeCarros;
-import com.google.common.collect.Ordering;
-import com.google.common.collect.TreeMultimap;
+import java.util.ArrayList;
 
 /**
  *
  * @author Junior
  */
 public class Estatistica {
-    private static TreeMultimap<Float, Integer> mapList = TreeMultimap.create(Ordering.natural().reverse(), Ordering.natural());
+    private static ArrayList<ArrayList<Object>> matriz = new ArrayList<ArrayList<Object>>();
     private static int longos = 0, curtos = 0, pesados = 0, leves = 0, altos = 0, baixos = 0, largos = 0, estreitos = 0;
-    final float peso = 2500, comprimento = (float) 2.5, largura = (float) 1.6, altura = (float) 1.7;
+    private final float comprimento = (float) 2.5, largura = (float) 1.6, altura = (float) 1.7;
+    private final int peso = 2500;
     
     /**
      *
@@ -24,33 +24,64 @@ public class Estatistica {
      */
     
     public void  addEstatistica(int chassi){
-        float pesoCarro;
+        int pesoCarro;
+        float alturaCarro, comprimentoCarro, larguraCarro;
         
         if((pesoCarro = catalogoDeCarros.pegaPeso(chassi)) < peso)
             leves++;
         else
             pesados++;
         
-        if(catalogoDeCarros.pegaAltura(chassi) < altura)
+        if((alturaCarro = catalogoDeCarros.pegaAltura(chassi)) < altura)
             baixos++;
         else
             altos++;
         
-        if(catalogoDeCarros.pegaComprimento(chassi) < comprimento)
+        if((comprimentoCarro = catalogoDeCarros.pegaComprimento(chassi)) < comprimento)
             curtos++;
         else
             longos++;
         
-        if(catalogoDeCarros.pegaLargura(chassi) < largura)
+        if((larguraCarro = catalogoDeCarros.pegaLargura(chassi)) < largura)
             estreitos++;
         else
             largos++;
         
-        mapList.put(pesoCarro, chassi);
+        addMatriz (chassi, pesoCarro, alturaCarro, comprimentoCarro, larguraCarro, catalogoDeCarros.pegaModelo(chassi));
     }
     
-    public static TreeMultimap getMapList(){
-        return mapList;
+    private static void addMatriz (int chassi, int pesoCarro, float alturaCarro, float comprimentoCarro, float larguraCarro, String modelo) {
+        CarroMatriz carro = new CarroMatriz();
+        boolean ok = false;
+        int i;
+        carro.chassi = chassi;
+        carro.peso = pesoCarro;
+        carro.altura = alturaCarro;
+        carro.comprimento = comprimentoCarro;
+        carro.largura = larguraCarro;
+        carro.modelo = modelo;
+        if (matriz.size() > 0) {
+            for (i = 0; i < matriz.size(); i++) {
+                CarroMatriz aux = (CarroMatriz) matriz.get(i).get(0);
+                if (aux.peso == carro.peso) {
+                    matriz.get(i).add(carro);
+                    i = matriz.size();
+                    ok = true;
+                }
+            }
+            if (ok == false) {
+                matriz.add(new ArrayList<Object>());
+                matriz.get(i).add(carro);
+            }
+        }
+        else {
+            matriz.add(new ArrayList<Object>());
+            matriz.get(0).add(carro);
+        }
+    }
+    
+    public static ArrayList<ArrayList<Object>> getMatriz() {
+        return matriz;
     }
     
     public static int getLeves(){
