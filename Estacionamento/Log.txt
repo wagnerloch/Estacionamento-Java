@@ -1,0 +1,184 @@
+Tue Oct 25 15:54:24 BRST 2016 - Programa iniciado
+Tue Oct 25 15:54:38 BRST 2016 - Programa iniciado
+Tue Oct 25 15:56:06 BRST 2016 - Programa iniciado
+Tue Oct 25 16:09:50 BRST 2016 - Programa iniciado
+Tue Oct 25 16:09:52 BRST 2016 - Simulação encerrada
+==========================================================================
+Tue Oct 25 16:28:33 BRST 2016 - Programa iniciado
+Tue Oct 25 16:28:35 BRST 2016 - Iniciada nova simulação
+Tue Oct 25 16:28:35 BRST 2016 - Lista de veículos carregada
+Tue Oct 25 16:28:35 BRST 2016 - Lista de vagas carregada
+Tue Oct 25 16:28:44 BRST 2016 - Simulação encerrada
+==========================================================================
+Tue Oct 25 16:30:50 BRST 2016 - Programa iniciado
+Tue Oct 25 16:30:52 BRST 2016 - Iniciada nova simulação
+Tue Oct 25 16:30:52 BRST 2016 - Lista de veículos carregada
+Tue Oct 25 16:30:52 BRST 2016 - Lista de vagas carregada
+Tue Oct 25 16:30:57 BRST 2016 - Tentativa de alocação: Chassi: 1244 Vaga: 105 SUCESSO
+Tue Oct 25 16:30:57 BRST 2016 - Tentativa de alocação: Chassi: 1244 Vaga: 105 FALHA
+Tue Oct 25 16:31:01 BRST 2016 - Programa salvo
+Tue Oct 25 16:31:05 BRST 2016 - Relatório gerado
+Tue Oct 25 16:31:06 BRST 2016 - Simulação encerrada
+==========================================================================
+Tue Oct 25 16:32:54 BRST 2016 - Programa iniciado
+Tue Oct 25 16:32:57 BRST 2016 - Iniciada nova simulação
+Tue Oct 25 16:32:57 BRST 2016 - Lista de veículos carregada
+Tue Oct 25 16:32:57 BRST 2016 - Lista de vagas carregada
+Tue Oct 25 16:33:01 BRST 2016 - Tentativa de alocação: Chassi: 1244 Vaga: 105 SUCESSO
+Tue Oct 25 16:33:05 BRST 2016 - Programa salvo
+Tue Oct 25 16:33:06 BRST 2016 - Simulação encerrada
+==========================================================================
+Tue Oct 25 16:35:36 BRST 2016 - Programa iniciado
+Tue Oct 25 16:35:37 BRST 2016 - Iniciada nova simulação
+Tue Oct 25 16:35:37 BRST 2016 - Lista de veículos carregada
+Tue Oct 25 16:35:37 BRST 2016 - Lista de vagas carregada
+Tue Oct 25 16:35:41 BRST 2016 - Tentativa de alocação: Chassi: 1244 Vaga: 105 SUCESSO
+Tue Oct 25 16:35:43 BRST 2016 - Programa salvo
+Tue Oct 25 16:35:45 BRST 2016 - Simulação encerrada
+==========================================================================
+Tue Oct 25 16:45:15 BRST 2016 - Programa iniciado
+Tue Oct 25 16:45:17 BRST 2016 - Iniciada nova simulação
+Tue Oct 25 16:45:17 BRST 2016 - Lista de veículos carregada
+Tue Oct 25 16:45:17 BRST 2016 - Lista de vagas carregada
+Tue Oct 25 16:45:23 BRST 2016 - Tentativa de alocação: Chassi: 1248 Vaga: 101 SUCESSO
+Tue Oct 25 16:45:30 BRST 2016 - Tentativa de alocação: Chassi: 1250 Vaga: 102 SUCESSO
+Tue Oct 25 16:45:55 BRST 2016 - Tentativa de alocação: Chassi: 1244 Vaga: 105 SUCESSO
+Tue Oct 25 16:46:00 BRST 2016 - Programa salvo
+Tue Oct 25 16:46:02 BRST 2016 - Simulação encerrada
+==========================================================================
+Tue Oct 25 16:46:23 BRST 2016 - Programa iniciado
+Tue Oct 25 16:46:25 BRST 2016 - Lista de veículos salvos anteriormente carregados
+Tue Oct 25 16:46:25 BRST 2016 - Lista de vagas salvas anteriormente carregada
+Tue Oct 25 16:46:25 BRST 2016 - Simulação anterior carregada
+Tue Oct 25 16:46:55 BRST 2016 - Tentativa de alocação: Chassi: 1247 Vaga: 108 FALHA
+Tue Oct 25 16:47:18 BRST 2016 - Tentativa de alocação: Chassi: 0 Vaga: 0 SUCESSO
+Tue Oct 25 16:47:25 BRST 2016 - Tentativa de alocação: Chassi: 1246 Vaga: 107 SUCESSO
+Tue Oct 25 16:47:46 BRST 2016 - Programa salvo
+Tue Oct 25 16:47:48 BRST 2016 - Simulação encerrada
+==========================================================================
+Tue Oct 25 16:53:51 BRST 2016 - Programa iniciado
+Tue Oct 25 16:53:53 BRST 2016 - Lista de veículos salvos anteriormente carregados
+Tue Oct 25 16:53:53 BRST 2016 - Lista de vagas salvas anteriormente carregada
+Tue Oct 25 16:53:53 BRST 2016 - Simulação anterior carregada
+Tue Oct 25 16:54:04 BRST 2016 - Saida da garagem: Chassi: 1248 Vaga: 101
+Tue Oct 25 16:54:34 BRST 2016 - Programa salvo
+Tue Oct 25 16:54:35 BRST 2016 - Simulação encerrada
+==========================================================================
+Tue Oct 25 16:55:40 BRST 2016 - Programa iniciado
+Tue Oct 25 16:55:42 BRST 2016 - Lista de veículos salvos anteriormente carregados
+Tue Oct 25 16:55:42 BRST 2016 - Lista de vagas salvas anteriormente carregada
+Tue Oct 25 16:55:42 BRST 2016 - Simulação anterior carregada
+Tue Oct 25 16:55:56 BRST 2016 - Simulação encerrada
+==========================================================================
+Wed Oct 26 15:22:55 BRST 2016 - Programa iniciado
+Wed Oct 26 15:22:58 BRST 2016 - Iniciada nova simulação
+Wed Oct 26 15:22:58 BRST 2016 - Lista de veículos carregada
+Wed Oct 26 15:22:58 BRST 2016 - Lista de vagas carregada
+Wed Oct 26 15:23:08 BRST 2016 - Tentativa de alocação: Chassi: 1244 Vaga: 105 SUCESSO
+Wed Oct 26 15:23:16 BRST 2016 - Tentativa de alocação: Chassi: 1247 Vaga: 102 SUCESSO
+Wed Oct 26 15:23:22 BRST 2016 - Tentativa de alocação: Chassi: 1240 Vaga: 107 SUCESSO
+Wed Oct 26 15:23:28 BRST 2016 - Tentativa de alocação: Chassi: 1246 Vaga: 111 SUCESSO
+Wed Oct 26 15:24:23 BRST 2016 - Tentativa de alocação: Chassi: 1242 Vaga: 114 SUCESSO
+Wed Oct 26 15:24:29 BRST 2016 - Programa salvo
+Wed Oct 26 15:24:35 BRST 2016 - Relatório gerado
+Wed Oct 26 15:24:39 BRST 2016 - Simulação encerrada
+==========================================================================
+Wed Oct 26 15:27:07 BRST 2016 - Programa iniciado
+Wed Oct 26 15:27:10 BRST 2016 - Lista de veículos salvos anteriormente carregados
+Wed Oct 26 15:27:10 BRST 2016 - Lista de vagas salvas anteriormente carregada
+Wed Oct 26 15:27:10 BRST 2016 - Simulação anterior carregada
+Wed Oct 26 15:27:12 BRST 2016 - Relatório gerado
+Wed Oct 26 15:27:15 BRST 2016 - Simulação encerrada
+==========================================================================
+Wed Oct 26 15:30:18 BRST 2016 - Programa iniciado
+Wed Oct 26 15:30:19 BRST 2016 - Lista de veículos salvos anteriormente carregados
+Wed Oct 26 15:30:19 BRST 2016 - Lista de vagas salvas anteriormente carregada
+Wed Oct 26 15:30:19 BRST 2016 - Simulação anterior carregada
+Wed Oct 26 15:30:22 BRST 2016 - Relatório gerado
+Wed Oct 26 15:31:40 BRST 2016 - Programa iniciado
+Wed Oct 26 15:31:42 BRST 2016 - Lista de veículos salvos anteriormente carregados
+Wed Oct 26 15:31:42 BRST 2016 - Lista de vagas salvas anteriormente carregada
+Wed Oct 26 15:31:42 BRST 2016 - Simulação anterior carregada
+Wed Oct 26 15:31:44 BRST 2016 - Relatório gerado
+Wed Oct 26 15:47:51 BRST 2016 - Programa iniciado
+Wed Oct 26 15:47:53 BRST 2016 - Lista de veículos salvos anteriormente carregados
+Wed Oct 26 15:47:53 BRST 2016 - Lista de vagas salvas anteriormente carregada
+Wed Oct 26 15:47:53 BRST 2016 - Simulação anterior carregada
+Wed Oct 26 15:47:55 BRST 2016 - Relatório gerado
+Wed Oct 26 15:47:57 BRST 2016 - Simulação encerrada
+==========================================================================
+Wed Oct 26 15:48:20 BRST 2016 - Programa iniciado
+Wed Oct 26 15:48:22 BRST 2016 - Iniciada nova simulação
+Wed Oct 26 15:48:22 BRST 2016 - Lista de veículos carregada
+Wed Oct 26 15:48:22 BRST 2016 - Lista de vagas carregada
+Wed Oct 26 15:48:29 BRST 2016 - Tentativa de alocação: Chassi: 1244 Vaga: 105 SUCESSO
+Wed Oct 26 15:48:33 BRST 2016 - Programa salvo
+Wed Oct 26 15:49:21 BRST 2016 - Programa iniciado
+Wed Oct 26 15:49:22 BRST 2016 - Iniciada nova simulação
+Wed Oct 26 15:49:22 BRST 2016 - Lista de veículos carregada
+Wed Oct 26 15:49:22 BRST 2016 - Lista de vagas carregada
+Wed Oct 26 15:49:28 BRST 2016 - Tentativa de alocação: Chassi: 1244 Vaga: 105 SUCESSO
+Wed Oct 26 15:49:31 BRST 2016 - Programa salvo
+Wed Oct 26 15:52:50 BRST 2016 - Programa iniciado
+Wed Oct 26 15:52:53 BRST 2016 - Iniciada nova simulação
+Wed Oct 26 15:52:53 BRST 2016 - Lista de veículos carregada
+Wed Oct 26 15:52:53 BRST 2016 - Lista de vagas carregada
+Wed Oct 26 15:52:55 BRST 2016 - Relatório gerado
+Wed Oct 26 15:53:33 BRST 2016 - Programa iniciado
+Wed Oct 26 15:53:34 BRST 2016 - Iniciada nova simulação
+Wed Oct 26 15:53:34 BRST 2016 - Lista de veículos carregada
+Wed Oct 26 15:53:34 BRST 2016 - Lista de vagas carregada
+Wed Oct 26 15:53:38 BRST 2016 - Tentativa de alocação: Chassi: 1253 Vaga: 101 SUCESSO
+Wed Oct 26 15:53:44 BRST 2016 - Tentativa de alocação: Chassi: 1241 Vaga: 113 SUCESSO
+Wed Oct 26 15:53:49 BRST 2016 - Tentativa de alocação: Chassi: 1238 Vaga: 110 SUCESSO
+Wed Oct 26 15:53:52 BRST 2016 - Programa salvo
+Wed Oct 26 15:53:53 BRST 2016 - Relatório gerado
+Wed Oct 26 15:54:20 BRST 2016 - Simulação encerrada
+==========================================================================
+Wed Oct 26 15:55:02 BRST 2016 - Programa iniciado
+Wed Oct 26 15:55:05 BRST 2016 - Iniciada nova simulação
+Wed Oct 26 15:55:05 BRST 2016 - Lista de veículos carregada
+Wed Oct 26 15:55:05 BRST 2016 - Lista de vagas carregada
+Wed Oct 26 15:55:08 BRST 2016 - Tentativa de alocação: Chassi: 1244 Vaga: 105 SUCESSO
+Wed Oct 26 15:55:13 BRST 2016 - Tentativa de alocação: Chassi: 1240 Vaga: 102 SUCESSO
+Wed Oct 26 15:55:17 BRST 2016 - Tentativa de alocação: Chassi: 1250 Vaga: 104 SUCESSO
+Wed Oct 26 15:55:20 BRST 2016 - Programa salvo
+Wed Oct 26 16:03:21 BRST 2016 - Programa iniciado
+Wed Oct 26 16:03:22 BRST 2016 - Iniciada nova simulação
+Wed Oct 26 16:03:22 BRST 2016 - Lista de veículos carregada
+Wed Oct 26 16:03:22 BRST 2016 - Lista de vagas carregada
+Wed Oct 26 16:03:25 BRST 2016 - Tentativa de alocação: Chassi: 1244 Vaga: 105 SUCESSO
+Wed Oct 26 16:03:29 BRST 2016 - Tentativa de alocação: Chassi: 1239 Vaga: 102 SUCESSO
+Wed Oct 26 16:03:33 BRST 2016 - Tentativa de alocação: Chassi: 1242 Vaga: 114 SUCESSO
+Wed Oct 26 16:03:38 BRST 2016 - Tentativa de alocação: Chassi: 1250 Vaga: 104 SUCESSO
+Wed Oct 26 16:03:42 BRST 2016 - Tentativa de alocação: Chassi: 1238 Vaga: 110 SUCESSO
+Wed Oct 26 16:03:54 BRST 2016 - Tentativa de alocação: Chassi: 1251 Vaga: 103 SUCESSO
+Wed Oct 26 16:03:56 BRST 2016 - Programa salvo
+Wed Oct 26 16:05:23 BRST 2016 - Programa iniciado
+Wed Oct 26 16:05:27 BRST 2016 - Iniciada nova simulação
+Wed Oct 26 16:05:27 BRST 2016 - Lista de veículos carregada
+Wed Oct 26 16:05:27 BRST 2016 - Lista de vagas carregada
+Wed Oct 26 16:05:30 BRST 2016 - Tentativa de alocação: Chassi: 1244 Vaga: 105 SUCESSO
+Wed Oct 26 16:05:34 BRST 2016 - Tentativa de alocação: Chassi: 1247 Vaga: 102 SUCESSO
+Wed Oct 26 16:05:39 BRST 2016 - Programa salvo
+Wed Oct 26 16:08:29 BRST 2016 - Programa iniciado
+Wed Oct 26 16:08:42 BRST 2016 - Iniciada nova simulação
+Wed Oct 26 16:08:42 BRST 2016 - Lista de veículos carregada
+Wed Oct 26 16:08:42 BRST 2016 - Lista de vagas carregada
+Wed Oct 26 16:08:50 BRST 2016 - Tentativa de alocação: Chassi: 1243 Vaga: 102 SUCESSO
+Wed Oct 26 16:09:01 BRST 2016 - Tentativa de alocação: Chassi: 1242 Vaga: 114 SUCESSO
+Wed Oct 26 16:09:04 BRST 2016 - Programa salvo
+Wed Oct 26 17:46:15 BRST 2016 - Programa iniciado
+Wed Oct 26 17:46:17 BRST 2016 - Iniciada nova simulação
+Wed Oct 26 17:46:17 BRST 2016 - Lista de veículos carregada
+Wed Oct 26 17:46:17 BRST 2016 - Lista de vagas carregada
+Wed Oct 26 17:46:22 BRST 2016 - Tentativa de alocação: Chassi: 1242 Vaga: 114 SUCESSO
+Wed Oct 26 17:46:31 BRST 2016 - Tentativa de alocação: Chassi: 1244 Vaga: 105 SUCESSO
+Wed Oct 26 17:46:41 BRST 2016 - Tentativa de alocação: Chassi: 1238 Vaga: 120 FALHA
+Wed Oct 26 17:46:46 BRST 2016 - Programa salvo
+Wed Oct 26 17:47:58 BRST 2016 - Programa iniciado
+Wed Oct 26 17:48:00 BRST 2016 - Iniciada nova simulação
+Wed Oct 26 17:48:00 BRST 2016 - Lista de veículos carregada
+Wed Oct 26 17:48:00 BRST 2016 - Lista de vagas carregada
+Wed Oct 26 17:48:03 BRST 2016 - Tentativa de alocação: Chassi: 1250 Vaga: 102 SUCESSO
+Wed Oct 26 17:48:07 BRST 2016 - Programa salvo
