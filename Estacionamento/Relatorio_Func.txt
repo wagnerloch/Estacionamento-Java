@@ -1,0 +1,105 @@
+public static void gerarRelatorio () throws IOException {
+        try (FileWriter arquivo = new FileWriter("Relatorio.txt")) {
+            PrintWriter gravarArquivo = new PrintWriter(arquivo);
+            //CRIA ARQUIVO RELATORIO.TXT
+            gravarArquivo.println("Relatorio:");
+            gravarArquivo.println();
+            //IMPRIME AS VAGAS COM SUCESSO E FALHA
+            
+            for (int i = 0; i < catalogoDeVagas.pegaTotalDeVagas(); i++) {
+                int idVaga = 101; //primeira vaga
+                idVaga += i;
+                gravarArquivo.print("Vaga: ");            
+                gravarArquivo.print (idVaga);
+                gravarArquivo.print (" | Tentativas com sucesso: ");
+                gravarArquivo.print (catalogoDeVagas.pegaSucessos(idVaga));
+                gravarArquivo.print (" | Tentativas sem sucesso: ");
+                gravarArquivo.print (catalogoDeVagas.pegaFalhas(idVaga));
+                gravarArquivo.println ("");
+            }
+            
+            //IMPRIME TODOS OS VEICULOS POR CATEGORIA
+            gravarArquivo.println();
+            gravarArquivo.println("Total de veiculos LONGOS estacionados hoje: " + Estatistica.getLongos());
+            gravarArquivo.println("Total de veiculos CURTOS estacionados hoje: " + Estatistica.getCurtos());
+            gravarArquivo.println("Total de veiculos PESADOS estacionados hoje: " + Estatistica.getPesados());
+            gravarArquivo.println("Total de veiculos LEVES estacionados hoje: " + Estatistica.getLeves());
+            gravarArquivo.println("Total de veiculos ALTOS estacionados hoje: " + Estatistica.getAltos());
+            gravarArquivo.println("Total de veiculos BAIXOS estacionados hoje: " + Estatistica.getBaixos());
+            gravarArquivo.println("Total de veiculos LARGOS estacionados hoje: " + Estatistica.getLargos());
+            gravarArquivo.println("Total de veiculos ESTREITOS estacionados hoje: " + Estatistica.getEstreitos());
+            gravarArquivo.println();
+            //IMPRIME POR ORDEM DECRESCENTE DE PESO, ALTURA, COMPRIMENTO E LARGURA
+            gravarArquivo.println("Carros estacionados hoje: ");
+            //MATRIX COM TODOS OS CARROS ESTACIONADOS
+            ArrayList<ArrayList<Object>> matriz;
+            matriz = Estatistica.getMatriz();
+            //NAVEGA PELAS COLUNAS
+            int contadorA = matriz.size();
+            int removedorA = 0;
+            int contadorB = 0;
+            int removedorB = 0;
+            //MATRIZ DE NAVEGACAO
+            CarroMatriz maior, aux;
+            //TRATAMENTO DA MATRIZ
+            for (int a = 0; a < contadorA; a++) {
+                //SE TIVER MAIS QUE UM CONJUNTO DE ELEMENTOS
+                if(contadorA > 1){
+                    maior = (CarroMatriz) matriz.get(0).get(0);
+                    for (int i = 1; i < matriz.size(); i++) {
+                        //NOVO CONJUNTO
+                        aux = (CarroMatriz) matriz.get(i).get(0);
+                        //NOVO CONJUNTO E MAIOR QUE CONJUNTO ANTIGO
+                        if(aux.peso > maior.peso){
+                            maior = aux;
+                            contadorB = matriz.get(i).size();
+                            removedorA = i;
+                        }
+                    }
+                    //SE O CONJUNTO DE ELEMENTOS TIVER MAIS QUE UM ELEMENTO
+                    for(int b = 0; b < contadorB; b++){
+                        if(contadorB > 1){
+                            for (int i = 1; i < matriz.size(); i++) {
+                                aux = (CarroMatriz) matriz.get(removedorA).get(0);
+                                //NOVO ELEMENTO E MAIOR QUE ELEMENTO ANTIGO
+                                if(aux.altura > maior.altura){
+                                    maior = aux;
+                                    removedorB = i;
+                                }else{
+                                    if(aux.altura == maior.altura){
+                                        //NOVO ELEMENTO E MAIOR QUE ELEMENTO ANTIGO
+                                        if(aux.comprimento > maior.comprimento){
+                                            maior = aux;
+                                            removedorB = i;
+                                        }else{
+                                            if(aux.comprimento == maior.comprimento){
+                                                //NOVO ELEMENTO E MAIOR QUE ELEMENTO ANTIGO
+                                                if(aux.largura > maior.largura){
+                                                   maior = aux;
+                                                    removedorB = i;
+                                                }
+                                            }
+                                        }   
+                                    }
+                                }
+                            }
+                            //IMPRIME O MAIOR DO CONJUNTO RESTANTE
+                            gravarArquivo.println(maior.chassi);
+                            //REMOVE O QUE FOI IMPRESSO
+                            matriz.remove(removedorA).remove(removedorB);
+                        }else{
+                            //O MAIOR E O UNICO DO CONJUNTO
+                            gravarArquivo.println(maior.chassi);
+                        }
+                        //CONJUNTO VAZIO E REMOVIDO
+                        matriz.remove(removedorA); 
+                    }
+                }
+            }
+            //FECHA O ARQUIVO RELATORIO.TXT
+            arquivo.close();
+            System.out.println();   
+            System.out.println("Relatorio foi gravado com sucesso em Relatorio.txt");
+            gerarLog (12, 0, 0, 0);
+        }
+    }

@@ -34,13 +34,17 @@ public class CatalogoDeCarros implements java.io.Serializable{
     }
     
     public void listarCatalogo () {
+        int contador = 0;
         System.out.printf ("%-20s|%-7s|%-5s|%-7s|%-12s|%-8s\n", "Modelo", "Chassi", "Peso", "Altura", "Comprimento", "Largura");
         for (Carro carro: catalogoDeCarros.values()) {
-            if (!carro.pegaSituacao()) {
-                System.out.printf ("%-20s|%-7s|%-5s|%-7s|%-12s|%-8s\n", carro.pegaModelo(),
+            if (contador < 5) {
+                if (!carro.pegaSituacao()) {
+                    System.out.printf ("%-20s|%-7s|%-5s|%-7s|%-12s|%-8s\n", carro.pegaModelo(),
                                     carro.pegaChassi(), carro.pegaPeso(), carro.pegaAltura(),
                                     carro.pegaComprimento(), carro.pegaLargura());
-            }
+                    contador++;
+                }
+            }            
         }
     }
     
