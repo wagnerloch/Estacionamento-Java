@@ -27,6 +27,7 @@ public class TelaAbertura extends javax.swing.JFrame {
     /**
      * Creates new form TelaAbertura
      */
+    
     public TelaAbertura() {
         initComponents();
     }
@@ -118,30 +119,29 @@ public class TelaAbertura extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnNovaSimulacaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNovaSimulacaoMouseClicked
-        // TODO inicia nova simulação
-        TelaPrincipal telaPrincipal = new TelaPrincipal();
-        telaPrincipal.setVisible(true);
+    private void btnContinuarSimulacaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnContinuarSimulacaoMouseClicked
+        // TODO continua simulação salva anteriormente
+        TelaPrincipal telaPrincipal;
         try {
-            catalogoDeCarros.carregaCatalogoDoArquivo("VEICULOS.txt");
+            telaPrincipal = new TelaPrincipal(true);
+            telaPrincipal.setVisible(true);
         } catch (IOException ex) {
             Logger.getLogger(TelaAbertura.class.getName()).log(Level.SEVERE, null, ex);
         }
+        dispose(); //fecha a tela de abertura
+    }//GEN-LAST:event_btnContinuarSimulacaoMouseClicked
+
+    private void btnNovaSimulacaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNovaSimulacaoMouseClicked
+        // TODO inicia nova simulação
+        TelaPrincipal telaPrincipal;
         try {
-            catalogoDeVagas.carregaCatalogoDoArquivo("VAGAS.txt");
+            telaPrincipal = new TelaPrincipal(false);
+        telaPrincipal.setVisible(true);
         } catch (IOException ex) {
             Logger.getLogger(TelaAbertura.class.getName()).log(Level.SEVERE, null, ex);
         }
         dispose(); //fecha a tela de abertura
     }//GEN-LAST:event_btnNovaSimulacaoMouseClicked
-
-    private void btnContinuarSimulacaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnContinuarSimulacaoMouseClicked
-        // TODO continua simulação salva anteriormente
-        TelaPrincipal telaPrincipal = new TelaPrincipal();
-        telaPrincipal.setVisible(true);
-        carregar ();
-        dispose(); //fecha a tela de abertura
-    }//GEN-LAST:event_btnContinuarSimulacaoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -185,50 +185,4 @@ public class TelaAbertura extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
-
-
-/*
-    Função carregar() carrega a partir de um arquivo salvo anteriormente o progresso de simulação
-    Essa função é chamada sempre no início do programa caso o usuário desejar continuar uma simulação
-    */
-    public static void carregar () {
-            //TRY CATCH
-        try {
-            //CARREGA CARRO DO ARQUIVO CARRO.SER
-            FileInputStream entrada = new FileInputStream("carro.ser");
-            ObjectInputStream in = new ObjectInputStream(entrada);
-            //carro = (Carro) in.readObject();
-            catalogoDeCarros = (CatalogoDeCarros) in.readObject();
-            in.close();
-            entrada.close();
-            gerarLog (7, 0, 0, 0);
-            //NAO ACHOU ARQUIVO CARRO.SER
-        }catch(ClassNotFoundException c) {
-            System.out.println("carro.ser não encontrado");
-            return;
-        }
-        catch(IOException i) {
-            i.printStackTrace();
-            return;
-        }
-            //TRY CATCH
-        try {
-            //CARREGA CARRO DO ARQUIVO CARRO.SER
-            FileInputStream entrada = new FileInputStream("vaga.ser");
-            ObjectInputStream in = new ObjectInputStream(entrada);
-            catalogoDeVagas = (CatalogoDeVagas) in.readObject();
-            in.close();
-            entrada.close();
-            gerarLog (6, 0, 0, 0);
-            //NAO ACHOU ARQUIVO CARRO.SER
-        }catch(ClassNotFoundException c) {
-                System.out.println("vaga.ser não encontrado");
-                return;
-        }
-        catch(IOException i) {
-            i.printStackTrace();
-            return;
-        }
-        //TRY CATCH
-    }
 }

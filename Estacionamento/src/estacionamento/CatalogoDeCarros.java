@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -31,6 +32,10 @@ public class CatalogoDeCarros implements java.io.Serializable{
             catalogoDeCarros.put(carro.pegaModelo(), carro);
             totalDeCarros++;
         }
+    }
+    
+    public Map pegarCatalogo () {
+        return catalogoDeCarros;
     }
     
     public void listarCatalogo () {
@@ -98,6 +103,10 @@ public class CatalogoDeCarros implements java.io.Serializable{
             }
         }
         return 0;
+    }
+    
+    public int pegaTotalDeCarros () {
+        return totalDeCarros;
     }
     
     private Carro interpretadorDeLinha (String linha) {

@@ -5,19 +5,45 @@
  */
 package view;
 
+import estacionamento.Carro;
+import estacionamento.CatalogoDeCarros;
+import estacionamento.CatalogoDeVagas;
+import static estacionamento.Estacionamento.catalogoDeCarros;
+import static estacionamento.Estacionamento.catalogoDeVagas;
+import estacionamento.Estatistica;
+import estacionamento.Vaga;
+import java.io.IOException;
 import static java.lang.System.exit;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author wagner
  */
 public class TelaPrincipal extends javax.swing.JFrame {
+    
+    CatalogoDeCarros catalogoDeCarros = new CatalogoDeCarros ();
+    CatalogoDeVagas catalogoDeVagas = new CatalogoDeVagas ();
+    Estatistica estatistica = new Estatistica ();
 
     /**
      * Creates new form TelaPrincipal
+     * @param continuar
      */
-    public TelaPrincipal() {
+    public TelaPrincipal(boolean continuar) throws IOException {
         initComponents();
+        
+        if (continuar == true) { //continuar simulação
+            carregar ();
+        }
+        else { //iniciar nova simulação
+            iniciar ();
+        }
+        
     }
 
     /**
@@ -35,12 +61,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
         btnSalvar = new javax.swing.JButton();
         btnRelatorio = new javax.swing.JButton();
         btnEncerrar = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tabelaCarros = new javax.swing.JTable();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabelaVagas = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Simulador de Estacionamento");
         setResizable(false);
 
         btnEntrarNaGaragem.setText("Entrar");
+        btnEntrarNaGaragem.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnEntrarNaGaragemMouseClicked(evt);
+            }
+        });
 
         btnPesquisar.setText("Pesquisar");
 
@@ -57,24 +92,49 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        tabelaCarros.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Modelo", "Chassi", "Peso", "Altura", "Comprimento", "Largura"
+            }
+        ));
+        jScrollPane2.setViewportView(tabelaCarros);
+
+        tabelaVagas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Identificação", "Peso Máx", "Altura Máx", "Comprimento Máx", "Largura Máx"
+            }
+        ));
+        jScrollPane1.setViewportView(tabelaVagas);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnEntrarNaGaragem)
-                .addGap(18, 18, 18)
-                .addComponent(btnPesquisar)
-                .addGap(18, 18, 18)
-                .addComponent(btnSairDaGaragem)
-                .addGap(18, 18, 18)
-                .addComponent(btnSalvar)
-                .addGap(18, 18, 18)
-                .addComponent(btnRelatorio)
-                .addGap(30, 30, 30)
-                .addComponent(btnEncerrar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnEntrarNaGaragem)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnPesquisar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSairDaGaragem)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSalvar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnRelatorio)
+                        .addGap(30, 30, 30)
+                        .addComponent(btnEncerrar)
+                        .addGap(0, 77, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -87,7 +147,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     .addComponent(btnSalvar)
                     .addComponent(btnRelatorio)
                     .addComponent(btnEncerrar))
-                .addContainerGap(266, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(64, Short.MAX_VALUE))
         );
 
         pack();
@@ -99,40 +163,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         exit(0);
     }//GEN-LAST:event_btnEncerrarMouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void btnEntrarNaGaragemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEntrarNaGaragemMouseClicked
+        // TODO entrar na garagem
+        TelaEntrarNaGaragem telaEntrarNaGaragem;
+        telaEntrarNaGaragem = new TelaEntrarNaGaragem();
+        telaEntrarNaGaragem.setVisible(true);
+    }//GEN-LAST:event_btnEntrarNaGaragemMouseClicked
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TelaPrincipal().setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEncerrar;
@@ -141,5 +179,46 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnRelatorio;
     private javax.swing.JButton btnSairDaGaragem;
     private javax.swing.JButton btnSalvar;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable tabelaCarros;
+    private javax.swing.JTable tabelaVagas;
     // End of variables declaration//GEN-END:variables
+
+    public void iniciar () throws IOException{
+        System.out.println("Iniciando nova simulação!");
+        catalogoDeCarros.carregaCatalogoDoArquivo("VEICULOS.txt");
+        catalogoDeVagas.carregaCatalogoDoArquivo("VAGAS.txt");
+        System.out.println("Veículos e vagas carregados!");
+        carregarTabelas ();
+    }
+    
+    public void carregar () {
+        
+    }
+    
+    public void carregarTabelas () {
+        Map <String, Carro> catalogoCarros;
+        Map <String, Vaga> catalogoVagas;
+        catalogoCarros = catalogoDeCarros.pegarCatalogo();
+        catalogoVagas = catalogoDeVagas.pegarCatalogo();
+        
+        DefaultTableModel valoresCarros = (DefaultTableModel) tabelaCarros.getModel();
+        for (Carro carro: catalogoCarros.values()) {
+            if (!carro.pegaSituacao()) {
+                valoresCarros.addRow(new Object[] {carro.pegaModelo(), carro.pegaChassi(), carro.pegaPeso(),
+                                            carro.pegaAltura(), carro.pegaComprimento(), carro.pegaLargura()});
+            }
+        }
+        
+        DefaultTableModel valoresVagas = (DefaultTableModel) tabelaVagas.getModel();
+        for (Vaga vaga: catalogoVagas.values()) {
+            if (!vaga.pegaDisponibilidade()) {
+                valoresVagas.addRow(new Object[] {vaga.pegaIdentificacao(), vaga.pegaPesoMaximo(), vaga.pegaAlturaMaxima(),
+                                                vaga.pegaComprimentoMaximo(), vaga.pegaLarguraMaxima()});
+            }
+        }
+        
+        System.out.println (catalogoDeCarros.pegaModelo(1244));
+    }
 }

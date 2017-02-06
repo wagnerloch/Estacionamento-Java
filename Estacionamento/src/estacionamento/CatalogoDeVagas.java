@@ -33,6 +33,10 @@ public class CatalogoDeVagas implements java.io.Serializable{
         }
     }
     
+    public Map pegarCatalogo () {
+        return catalogoDeVagas;
+    }
+    
     public void listarCatalogo () {
         System.out.printf ("%-14s|%-9s|%-11s|%-16s|%-12s\n", "Identificacao", "Peso Max", "Altura Max", "Comprimento Max", "Largura Max");
         for (Vaga vaga: catalogoDeVagas.values()) {
