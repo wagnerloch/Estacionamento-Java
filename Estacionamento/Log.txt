@@ -271,3 +271,9 @@ Mon Feb 06 14:06:19 BRST 2017 - Tentativa de alocação: Chassi: 1244 Vaga: 105 
 Mon Feb 06 14:06:26 BRST 2017 - Tentativa de alocação: Chassi: 1235 Vaga: 107 SUCESSO
 Mon Feb 06 14:06:36 BRST 2017 - Tentativa de alocação: Chassi: 1240 Vaga: 102 SUCESSO
 Mon Feb 06 14:06:43 BRST 2017 - Tentativa de alocação: Chassi: 1241 Vaga: 113 SUCESSO
+Mon Feb 06 14:20:57 BRST 2017 - Programa iniciado
+Mon Feb 06 14:20:59 BRST 2017 - Iniciada nova simulação
+Mon Feb 06 14:20:59 BRST 2017 - Lista de veículos carregada
+Mon Feb 06 14:20:59 BRST 2017 - Lista de vagas carregada
+Mon Feb 06 14:28:21 BRST 2017 - Programa iniciado
+Mon Feb 06 14:44:48 BRST 2017 - Programa iniciado
