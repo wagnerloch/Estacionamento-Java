@@ -20,7 +20,7 @@ import javax.swing.JOptionPane;
 public class TelaEntrarNaGaragem extends javax.swing.JFrame {
     /**
      * Creates new form TelaEntrarNaGaragem
-     */
+     */    
     public TelaEntrarNaGaragem() {
         initComponents();
         txtChassiVeiculo.setDocument(new SoNumeros());
@@ -121,34 +121,29 @@ public class TelaEntrarNaGaragem extends javax.swing.JFrame {
     private void btnAlocarVeiculoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAlocarVeiculoMouseClicked
         // TODO verificar se pode ser alocado
         int chassi = Integer.parseInt(txtChassiVeiculo.getText());
-        int vaga = Integer.parseInt(txtIdentificadorVaga.getText());
+        int vaga = Integer.parseInt(txtIdentificadorVaga.getText());        
         
-
-        //BUG AQUI, não sei pq, mas não tá pegando os dados do catalogo
-        System.out.println(catalogoDeCarros.pegaModelo(1244));
-        
-        if (catalogoDeCarros.pegaPeso(chassi) <= catalogoDeVagas.pegaPeso(vaga)) {
-            if (catalogoDeCarros.pegaAltura(chassi) <= catalogoDeVagas.pegaAltura(vaga)) {
-                if (catalogoDeCarros.pegaComprimento(chassi) <= catalogoDeVagas.pegaComprimento(vaga)) {
-                    if (catalogoDeCarros.pegaLargura(chassi) <= catalogoDeVagas.pegaLargura(vaga)) {
-                        if (catalogoDeCarros.pegaModelo(chassi) == null) {
+        if (TelaPrincipal.catalogoDeCarros.pegaPeso(chassi) <= TelaPrincipal.catalogoDeVagas.pegaPeso(vaga)) {
+            if (TelaPrincipal.catalogoDeCarros.pegaAltura(chassi) <= TelaPrincipal.catalogoDeVagas.pegaAltura(vaga)) {
+                if (TelaPrincipal.catalogoDeCarros.pegaComprimento(chassi) <= TelaPrincipal.catalogoDeVagas.pegaComprimento(vaga)) {
+                    if (TelaPrincipal.catalogoDeCarros.pegaLargura(chassi) <= TelaPrincipal.catalogoDeVagas.pegaLargura(vaga)) {
+                        if (TelaPrincipal.catalogoDeCarros.pegaModelo(chassi) == null) {
                             JOptionPane.showMessageDialog(null,"Veículo não encontrado!");
                             return;
                         }
                         JOptionPane.showMessageDialog(null,"Veículo alocado com sucesso!");
-                        catalogoDeCarros.alocar(chassi, vaga);
-                        catalogoDeVagas.alocar(chassi, vaga, catalogoDeCarros.pegaModelo(chassi));
+                        TelaPrincipal.catalogoDeCarros.alocar(chassi, vaga);
+                        TelaPrincipal.catalogoDeVagas.alocar(chassi, vaga, TelaPrincipal.catalogoDeCarros.pegaModelo(chassi));
                         //alocado com sucesso
-                        
+                        this.dispose();
+                        return;
                     }
                 }
             }
         }
         JOptionPane.showMessageDialog(null,"Veículo não alocado!");
-        dispose();
-        
-        
-        
+        this.dispose();
+         
     }//GEN-LAST:event_btnAlocarVeiculoMouseClicked
 
     private void txtChassiVeiculoPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_txtChassiVeiculoPropertyChange

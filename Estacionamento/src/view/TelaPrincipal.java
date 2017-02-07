@@ -26,9 +26,9 @@ import javax.swing.table.DefaultTableModel;
  */
 public class TelaPrincipal extends javax.swing.JFrame {
     
-    CatalogoDeCarros catalogoDeCarros = new CatalogoDeCarros ();
-    CatalogoDeVagas catalogoDeVagas = new CatalogoDeVagas ();
-    Estatistica estatistica = new Estatistica ();
+    public static CatalogoDeCarros catalogoDeCarros = new CatalogoDeCarros ();
+    public static CatalogoDeVagas catalogoDeVagas = new CatalogoDeVagas ();
+    public static Estatistica estatistica = new Estatistica ();
 
     /**
      * Creates new form TelaPrincipal
@@ -168,9 +168,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         TelaEntrarNaGaragem telaEntrarNaGaragem;
         telaEntrarNaGaragem = new TelaEntrarNaGaragem();
         telaEntrarNaGaragem.setVisible(true);
+        
     }//GEN-LAST:event_btnEntrarNaGaragemMouseClicked
-
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEncerrar;
@@ -197,7 +196,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         
     }
     
-    public void carregarTabelas () {
+    private void carregarTabelas () {
         Map <String, Carro> catalogoCarros;
         Map <String, Vaga> catalogoVagas;
         catalogoCarros = catalogoDeCarros.pegarCatalogo();
@@ -218,7 +217,5 @@ public class TelaPrincipal extends javax.swing.JFrame {
                                                 vaga.pegaComprimentoMaximo(), vaga.pegaLarguraMaxima()});
             }
         }
-        
-        System.out.println (catalogoDeCarros.pegaModelo(1244));
     }
 }
