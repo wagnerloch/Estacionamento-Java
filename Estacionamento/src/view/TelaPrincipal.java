@@ -8,17 +8,13 @@ package view;
 import estacionamento.Carro;
 import estacionamento.CatalogoDeCarros;
 import estacionamento.CatalogoDeVagas;
-import static estacionamento.Estacionamento.catalogoDeCarros;
-import static estacionamento.Estacionamento.catalogoDeVagas;
 import estacionamento.Estatistica;
 import estacionamento.Vaga;
 import java.io.IOException;
 import static java.lang.System.exit;
-import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
+import view.TelaEntrarNaGaragem;
 
 /**
  *
@@ -78,8 +74,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
 
         btnPesquisar.setText("Pesquisar");
+        btnPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPesquisarActionPerformed(evt);
+            }
+        });
 
         btnSairDaGaragem.setText("Sair");
+        btnSairDaGaragem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSairDaGaragemActionPerformed(evt);
+            }
+        });
 
         btnSalvar.setText("Salvar");
 
@@ -170,6 +176,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
         telaEntrarNaGaragem.setVisible(true);
         
     }//GEN-LAST:event_btnEntrarNaGaragemMouseClicked
+
+    private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
+        // TODO add your handling code here:
+        TelaPesquisar telaPesquisar;
+        telaPesquisar = new TelaPesquisar();
+        telaPesquisar.setVisible(true);
+    }//GEN-LAST:event_btnPesquisarActionPerformed
+
+    private void btnSairDaGaragemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairDaGaragemActionPerformed
+        // TODO add your handling code here:
+        TelaSair telaSair;
+        telaSair = new TelaSair();
+        telaSair.setVisible(true);
+    }//GEN-LAST:event_btnSairDaGaragemActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEncerrar;
