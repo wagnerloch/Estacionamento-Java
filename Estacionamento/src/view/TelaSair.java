@@ -16,6 +16,7 @@ public class TelaSair extends javax.swing.JFrame {
      */
     public TelaSair() {
         initComponents();
+        txtIdentificacao.setDocument(new SoNumeros());
     }
 
     /**
