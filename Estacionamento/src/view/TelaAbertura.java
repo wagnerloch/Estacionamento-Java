@@ -7,14 +7,7 @@ package view;
 
 import estacionamento.CatalogoDeCarros;
 import estacionamento.CatalogoDeVagas;
-import static estacionamento.Estacionamento.carregar;
-import static estacionamento.Estacionamento.catalogoDeCarros;
-import static estacionamento.Estacionamento.catalogoDeVagas;
-import static estacionamento.Estacionamento.gerarLog;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import static java.lang.System.exit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -24,11 +17,14 @@ import java.util.logging.Logger;
  */
 public class TelaAbertura extends javax.swing.JFrame {
 
-    /**
-     * Creates new form TelaAbertura
-     */
+    public static CatalogoDeCarros catalogoDeCarros;
+    public static CatalogoDeVagas catalogoDeVagas;
+    public static TelaPrincipal telaPrincipal;
     
-    public TelaAbertura() {
+    public TelaAbertura() throws IOException {
+        catalogoDeCarros = new CatalogoDeCarros ();
+        catalogoDeVagas = new CatalogoDeVagas ();
+        telaPrincipal = new TelaPrincipal();
         initComponents();
     }
 
@@ -121,26 +117,41 @@ public class TelaAbertura extends javax.swing.JFrame {
 
     private void btnContinuarSimulacaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnContinuarSimulacaoMouseClicked
         // TODO continua simulação salva anteriormente
-        TelaPrincipal telaPrincipal;
-        try {
-            telaPrincipal = new TelaPrincipal(true);
+         
             telaPrincipal.setVisible(true);
-        } catch (IOException ex) {
-            Logger.getLogger(TelaAbertura.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        
         dispose(); //fecha a tela de abertura
     }//GEN-LAST:event_btnContinuarSimulacaoMouseClicked
 
     private void btnNovaSimulacaoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNovaSimulacaoMouseClicked
         // TODO inicia nova simulação
-        TelaPrincipal telaPrincipal;
+        /*TelaPrincipal telaPrincipal;
         try {
             telaPrincipal = new TelaPrincipal(false);
         telaPrincipal.setVisible(true);
         } catch (IOException ex) {
             Logger.getLogger(TelaAbertura.class.getName()).log(Level.SEVERE, null, ex);
         }
-        dispose(); //fecha a tela de abertura
+        dispose(); //fecha a tela de abertura*/
+        System.out.println("Iniciando nova simulação!");
+        try {
+            catalogoDeCarros.carregaCatalogoDoArquivo("VEICULOS.txt");
+        } catch (IOException ex) {
+            Logger.getLogger(TelaAbertura.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            catalogoDeVagas.carregaCatalogoDoArquivo("VAGAS.txt");
+        } catch (IOException ex) {
+            Logger.getLogger(TelaAbertura.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        System.out.println("Veículos e vagas carregados!");
+        try {
+            TelaPrincipal telaPrincipal = new TelaPrincipal();
+            telaPrincipal.setVisible(true);
+        } catch (IOException ex) {
+            Logger.getLogger(TelaAbertura.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.dispose();
     }//GEN-LAST:event_btnNovaSimulacaoMouseClicked
 
     /**
@@ -173,7 +184,11 @@ public class TelaAbertura extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaAbertura().setVisible(true);
+                try {
+                    new TelaAbertura().setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(TelaAbertura.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }

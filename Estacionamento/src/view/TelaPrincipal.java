@@ -6,40 +6,24 @@
 package view;
 
 import estacionamento.Carro;
-import estacionamento.CatalogoDeCarros;
-import estacionamento.CatalogoDeVagas;
-import estacionamento.Estatistica;
 import estacionamento.Vaga;
 import java.io.IOException;
 import static java.lang.System.exit;
 import java.util.Map;
 import javax.swing.table.DefaultTableModel;
-import view.TelaEntrarNaGaragem;
+import static view.TelaAbertura.catalogoDeCarros;
+import static view.TelaAbertura.catalogoDeVagas;
 
 /**
  *
  * @author wagner
  */
 public class TelaPrincipal extends javax.swing.JFrame {
-    
-    public static CatalogoDeCarros catalogoDeCarros = new CatalogoDeCarros ();
-    public static CatalogoDeVagas catalogoDeVagas = new CatalogoDeVagas ();
-    public static Estatistica estatistica = new Estatistica ();
 
-    /**
-     * Creates new form TelaPrincipal
-     * @param continuar
-     */
-    public TelaPrincipal(boolean continuar) throws IOException {
+    
+    public TelaPrincipal() throws IOException {
         initComponents();
-        
-        if (continuar == true) { //continuar simulação
-            carregar ();
-        }
-        else { //iniciar nova simulação
-            iniciar ();
-        }
-        
+        carregarTabelas();
     }
 
     /**
@@ -204,19 +188,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTable tabelaVagas;
     // End of variables declaration//GEN-END:variables
 
-    public void iniciar () throws IOException{
-        System.out.println("Iniciando nova simulação!");
-        catalogoDeCarros.carregaCatalogoDoArquivo("VEICULOS.txt");
-        catalogoDeVagas.carregaCatalogoDoArquivo("VAGAS.txt");
-        System.out.println("Veículos e vagas carregados!");
-        carregarTabelas ();
-    }
     
-    public void carregar () {
-        
-    }
-    
-    private void carregarTabelas () {
+    public void carregarTabelas () {
         Map <String, Carro> catalogoCarros;
         Map <String, Vaga> catalogoVagas;
         catalogoCarros = catalogoDeCarros.pegarCatalogo();

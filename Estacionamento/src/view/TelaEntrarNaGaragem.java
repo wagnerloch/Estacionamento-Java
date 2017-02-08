@@ -5,12 +5,10 @@
  */
 package view;
 
-import estacionamento.CatalogoDeCarros;
-import estacionamento.CatalogoDeVagas;
-import static estacionamento.Estacionamento.catalogoDeCarros;
-import static estacionamento.Estacionamento.catalogoDeVagas;
-import static estacionamento.Estacionamento.estatistica;
-import static estacionamento.Estacionamento.gerarLog;
+
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -123,17 +121,17 @@ public class TelaEntrarNaGaragem extends javax.swing.JFrame {
         int chassi = Integer.parseInt(txtChassiVeiculo.getText());
         int vaga = Integer.parseInt(txtIdentificadorVaga.getText());        
         
-        if (TelaPrincipal.catalogoDeCarros.pegaPeso(chassi) <= TelaPrincipal.catalogoDeVagas.pegaPeso(vaga)) {
-            if (TelaPrincipal.catalogoDeCarros.pegaAltura(chassi) <= TelaPrincipal.catalogoDeVagas.pegaAltura(vaga)) {
-                if (TelaPrincipal.catalogoDeCarros.pegaComprimento(chassi) <= TelaPrincipal.catalogoDeVagas.pegaComprimento(vaga)) {
-                    if (TelaPrincipal.catalogoDeCarros.pegaLargura(chassi) <= TelaPrincipal.catalogoDeVagas.pegaLargura(vaga)) {
-                        if (TelaPrincipal.catalogoDeCarros.pegaModelo(chassi) == null) {
+        if (TelaAbertura.catalogoDeCarros.pegaPeso(chassi) <= TelaAbertura.catalogoDeVagas.pegaPeso(vaga)) {
+            if (TelaAbertura.catalogoDeCarros.pegaAltura(chassi) <= TelaAbertura.catalogoDeVagas.pegaAltura(vaga)) {
+                if (TelaAbertura.catalogoDeCarros.pegaComprimento(chassi) <= TelaAbertura.catalogoDeVagas.pegaComprimento(vaga)) {
+                    if (TelaAbertura.catalogoDeCarros.pegaLargura(chassi) <= TelaAbertura.catalogoDeVagas.pegaLargura(vaga)) {
+                        if (TelaAbertura.catalogoDeCarros.pegaModelo(chassi) == null) {
                             JOptionPane.showMessageDialog(null,"Veículo não encontrado!");
                             return;
                         }
                         JOptionPane.showMessageDialog(null,"Veículo alocado com sucesso!");
-                        TelaPrincipal.catalogoDeCarros.alocar(chassi, vaga);
-                        TelaPrincipal.catalogoDeVagas.alocar(chassi, vaga, TelaPrincipal.catalogoDeCarros.pegaModelo(chassi));
+                        TelaAbertura.catalogoDeCarros.alocar(chassi, vaga);
+                        TelaAbertura.catalogoDeVagas.alocar(chassi, vaga, TelaAbertura.catalogoDeCarros.pegaModelo(chassi));
                         //alocado com sucesso
                         this.dispose();
                         return;
