@@ -1,33 +1,34 @@
 Relatorio:
 
 Vaga: 101 | Tentativas com sucesso: 0 | Tentativas sem sucesso: 0
-Vaga: 102 | Tentativas com sucesso: 0 | Tentativas sem sucesso: 0
-Vaga: 103 | Tentativas com sucesso: 0 | Tentativas sem sucesso: 0
+Vaga: 102 | Tentativas com sucesso: 1 | Tentativas sem sucesso: 0
+Vaga: 103 | Tentativas com sucesso: 1 | Tentativas sem sucesso: 0
 Vaga: 104 | Tentativas com sucesso: 0 | Tentativas sem sucesso: 0
-Vaga: 105 | Tentativas com sucesso: 0 | Tentativas sem sucesso: 0
+Vaga: 105 | Tentativas com sucesso: 1 | Tentativas sem sucesso: 0
 Vaga: 106 | Tentativas com sucesso: 1 | Tentativas sem sucesso: 0
-Vaga: 107 | Tentativas com sucesso: 0 | Tentativas sem sucesso: 0
+Vaga: 107 | Tentativas com sucesso: 1 | Tentativas sem sucesso: 0
 Vaga: 108 | Tentativas com sucesso: 0 | Tentativas sem sucesso: 0
 Vaga: 109 | Tentativas com sucesso: 0 | Tentativas sem sucesso: 0
 Vaga: 110 | Tentativas com sucesso: 0 | Tentativas sem sucesso: 0
 Vaga: 111 | Tentativas com sucesso: 0 | Tentativas sem sucesso: 0
 Vaga: 112 | Tentativas com sucesso: 0 | Tentativas sem sucesso: 0
 Vaga: 113 | Tentativas com sucesso: 0 | Tentativas sem sucesso: 0
-Vaga: 114 | Tentativas com sucesso: 1 | Tentativas sem sucesso: 0
+Vaga: 114 | Tentativas com sucesso: 0 | Tentativas sem sucesso: 0
 Vaga: 115 | Tentativas com sucesso: 0 | Tentativas sem sucesso: 0
 Vaga: 116 | Tentativas com sucesso: 0 | Tentativas sem sucesso: 0
 Vaga: 117 | Tentativas com sucesso: 0 | Tentativas sem sucesso: 0
 Vaga: 118 | Tentativas com sucesso: 0 | Tentativas sem sucesso: 0
 Vaga: 119 | Tentativas com sucesso: 0 | Tentativas sem sucesso: 0
-Vaga: 120 | Tentativas com sucesso: 0 | Tentativas sem sucesso: 0
+Vaga: 120 | Tentativas com sucesso: 0 | Tentativas sem sucesso: 1
 
-Total de veiculos LONGOS estacionados hoje: 0
+Total de veiculos LONGOS estacionados hoje: 1
 Total de veiculos CURTOS estacionados hoje: 0
 Total de veiculos PESADOS estacionados hoje: 0
-Total de veiculos LEVES estacionados hoje: 0
+Total de veiculos LEVES estacionados hoje: 1
 Total de veiculos ALTOS estacionados hoje: 0
-Total de veiculos BAIXOS estacionados hoje: 0
-Total de veiculos LARGOS estacionados hoje: 0
+Total de veiculos BAIXOS estacionados hoje: 1
+Total de veiculos LARGOS estacionados hoje: 1
 Total de veiculos ESTREITOS estacionados hoje: 0
 
-Carros estacionados hoje: 
+Carros estacionados hoje: 1
+1237 | Chevrolet Corvete

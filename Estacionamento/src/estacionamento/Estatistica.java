@@ -17,6 +17,7 @@ public class Estatistica {
     private static int longos = 0, curtos = 0, pesados = 0, leves = 0, altos = 0, baixos = 0, largos = 0, estreitos = 0;
     private final float comprimento = (float) 2.5, largura = (float) 1.6, altura = (float) 1.7;
     private final int peso = 2500;
+    private int total;
     
     /**
      *
@@ -24,6 +25,7 @@ public class Estatistica {
      */
     
     public void  addEstatistica(int chassi){
+        total++;
         int pesoCarro;
         float alturaCarro, comprimentoCarro, larguraCarro;
         
@@ -114,6 +116,10 @@ public class Estatistica {
     
     public static int getLargos(){
         return largos;
+    }
+    
+    public int getTotal () {
+        return total;
     }
     
 }

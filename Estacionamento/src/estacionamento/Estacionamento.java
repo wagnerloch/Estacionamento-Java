@@ -319,17 +319,17 @@ public class Estacionamento {
             
             //IMPRIME TODOS OS VEICULOS POR CATEGORIA
             gravarArquivo.println();
-            gravarArquivo.println("Total de veiculos LONGOS estacionados hoje: " + Estatistica.getLongos());
-            gravarArquivo.println("Total de veiculos CURTOS estacionados hoje: " + Estatistica.getCurtos());
-            gravarArquivo.println("Total de veiculos PESADOS estacionados hoje: " + Estatistica.getPesados());
-            gravarArquivo.println("Total de veiculos LEVES estacionados hoje: " + Estatistica.getLeves());
-            gravarArquivo.println("Total de veiculos ALTOS estacionados hoje: " + Estatistica.getAltos());
-            gravarArquivo.println("Total de veiculos BAIXOS estacionados hoje: " + Estatistica.getBaixos());
-            gravarArquivo.println("Total de veiculos LARGOS estacionados hoje: " + Estatistica.getLargos());
-            gravarArquivo.println("Total de veiculos ESTREITOS estacionados hoje: " + Estatistica.getEstreitos());
+            gravarArquivo.println("Total de veiculos LONGOS estacionados hoje: " + estatistica.getLongos());
+            gravarArquivo.println("Total de veiculos CURTOS estacionados hoje: " + estatistica.getCurtos());
+            gravarArquivo.println("Total de veiculos PESADOS estacionados hoje: " + estatistica.getPesados());
+            gravarArquivo.println("Total de veiculos LEVES estacionados hoje: " + estatistica.getLeves());
+            gravarArquivo.println("Total de veiculos ALTOS estacionados hoje: " + estatistica.getAltos());
+            gravarArquivo.println("Total de veiculos BAIXOS estacionados hoje: " + estatistica.getBaixos());
+            gravarArquivo.println("Total de veiculos LARGOS estacionados hoje: " + estatistica.getLargos());
+            gravarArquivo.println("Total de veiculos ESTREITOS estacionados hoje: " + estatistica.getEstreitos());
             gravarArquivo.println();
             //IMPRIME POR ORDEM DECRESCENTE DE PESO, ALTURA, COMPRIMENTO E LARGURA
-            gravarArquivo.println("Carros estacionados hoje: ");
+            gravarArquivo.println("Carros estacionados hoje: " + estatistica.getTotal());
             //MATRIZ COM TODOS OS CARROS ESTACIONADOS
             ArrayList<ArrayList<Object>> matriz;
             matriz = Estatistica.getMatriz();
